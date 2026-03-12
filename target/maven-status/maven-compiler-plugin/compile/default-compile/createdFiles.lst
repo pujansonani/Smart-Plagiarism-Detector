@@ -1,0 +1,11 @@
+com/plagiarism/engine/PlagiarismAnalyzer.class
+com/plagiarism/models/SuspiciousSegment.class
+com/plagiarism/PlagiarismDetectorMain.class
+com/plagiarism/ml/FeatureExtractor.class
+com/plagiarism/utils/ReportGenerator.class
+com/plagiarism/models/ComparisonResult.class
+com/plagiarism/ui/MainController.class
+com/plagiarism/utils/FileProcessor.class
+com/plagiarism/utils/TextPreprocessor.class
+com/plagiarism/models/Document.class
+com/plagiarism/engine/SimilarityCalculator.class

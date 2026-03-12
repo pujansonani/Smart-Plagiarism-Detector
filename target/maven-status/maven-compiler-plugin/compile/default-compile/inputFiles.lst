@@ -1,0 +1,11 @@
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/utils/ReportGenerator.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/PlagiarismDetectorMain.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/utils/TextPreprocessor.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/utils/FileProcessor.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/engine/SimilarityCalculator.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/models/Document.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/models/SuspiciousSegment.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/engine/PlagiarismAnalyzer.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/ui/MainController.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/models/ComparisonResult.java
+/Users/pujansonani/Downloads/New folder/PlagiarismDetector/src/main/java/com/plagiarism/ml/FeatureExtractor.java

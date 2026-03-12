@@ -1,0 +1,9 @@
+2026-03-12 11:49:41.864 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Starting Plagiarism Detector Application
+2026-03-12 11:49:42.002 [JavaFX Application Thread] INFO  com.plagiarism.ui.MainController - Initializing MainController
+2026-03-12 11:49:42.460 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Application started successfully
+2026-03-12 11:51:27.277 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Starting Plagiarism Detector Application
+2026-03-12 11:51:27.324 [JavaFX Application Thread] INFO  com.plagiarism.ui.MainController - Initializing MainController
+2026-03-12 11:51:27.632 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Application started successfully
+2026-03-12 21:56:14.093 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Starting Plagiarism Detector Application
+2026-03-12 21:56:14.142 [JavaFX Application Thread] INFO  com.plagiarism.ui.MainController - Initializing MainController
+2026-03-12 21:56:14.544 [JavaFX Application Thread] INFO  c.plagiarism.PlagiarismDetectorMain - Application started successfully
