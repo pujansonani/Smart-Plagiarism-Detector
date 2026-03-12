@@ -29,12 +29,22 @@ public class PlagiarismAnalyzer {
         ComparisonResult result = new ComparisonResult(
                 UUID.randomUUID().toString(),
                 sourceDoc,
-                targetDoc
-        );
+                targetDoc);
+
+        // Handle empty documents
+        String sourceText = sourceDoc.getContent();
+        String targetText = targetDoc.getContent();
+        if (sourceText == null || sourceText.trim().isEmpty() ||
+                targetText == null || targetText.trim().isEmpty()) {
+            result.calculateFinalScore();
+            long endTime = System.currentTimeMillis();
+            result.setAnalysisTimeMs(endTime - startTime);
+            return result;
+        }
 
         // Preprocess documents
-        String sourceContent = TextPreprocessor.normalize(sourceDoc.getContent());
-        String targetContent = TextPreprocessor.normalize(targetDoc.getContent());
+        String sourceContent = TextPreprocessor.normalize(sourceText);
+        String targetContent = TextPreprocessor.normalize(targetText);
 
         // Calculate similarity using multiple algorithms
         double cosineSim = SimilarityCalculator.calculateCosineSimilarity(sourceContent, targetContent);
@@ -74,7 +84,8 @@ public class PlagiarismAnalyzer {
         for (int i = 0; i < sourceSentences.size(); i++) {
             String sourceSentence = sourceSentences.get(i);
 
-            if (sourceSentence.length() < MIN_SEGMENT_LENGTH) continue;
+            if (sourceSentence.length() < MIN_SEGMENT_LENGTH)
+                continue;
 
             for (int j = 0; j < targetSentences.size(); j++) {
                 String targetSentence = targetSentences.get(j);
@@ -87,8 +98,7 @@ public class PlagiarismAnalyzer {
                             i + sourceSentence.length(),
                             sourceSentence,
                             similarity,
-                            "Segment " + j + " in target document"
-                    );
+                            "Segment " + j + " in target document");
                     segment.setMatchStartIndex(j);
                     segment.setMatchEndIndex(j + targetSentence.length());
                     suspiciousSegments.add(segment);
@@ -103,6 +113,11 @@ public class PlagiarismAnalyzer {
      * Calculates semantic similarity using writing style and structure
      */
     private double calculateSemanticSimilarity(Document doc1, Document doc2) {
+        if (doc1.getContent() == null || doc1.getContent().trim().isEmpty() ||
+                doc2.getContent() == null || doc2.getContent().trim().isEmpty()) {
+            return 0.0;
+        }
+
         Map<String, Double> features1 = TextPreprocessor.extractStyleFeatures(doc1.getContent());
         Map<String, Double> features2 = TextPreprocessor.extractStyleFeatures(doc2.getContent());
 
@@ -117,7 +132,8 @@ public class PlagiarismAnalyzer {
             }
         }
 
-        if (maxDifference == 0) return 0.0;
+        if (maxDifference == 0)
+            return 0.0;
 
         return Math.max(0, 1.0 - (totalDifference / maxDifference));
     }
@@ -171,11 +187,11 @@ public class PlagiarismAnalyzer {
         report.append(String.format("Analysis Time: %d ms\n\n", result.getAnalysisTimeMs()));
 
         report.append("DOCUMENTS COMPARED:\n");
-        report.append(String.format("  Source: %s (%d words)\n", 
-                result.getSourceDocument().getName(), 
+        report.append(String.format("  Source: %s (%d words)\n",
+                result.getSourceDocument().getName(),
                 result.getSourceDocument().getWordCount()));
-        report.append(String.format("  Target: %s (%d words)\n\n", 
-                result.getTargetDocument().getName(), 
+        report.append(String.format("  Target: %s (%d words)\n\n",
+                result.getTargetDocument().getName(),
                 result.getTargetDocument().getWordCount()));
 
         report.append("SIMILARITY SCORES:\n");

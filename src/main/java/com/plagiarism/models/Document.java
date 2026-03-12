@@ -1,6 +1,5 @@
 package com.plagiarism.models;
 
-import java.io.File;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,8 @@ public class Document {
     }
 
     private long countWords(String text) {
-        if (text == null || text.isEmpty()) return 0;
+        if (text == null || text.isEmpty())
+            return 0;
         return text.trim().split("\\s+").length;
     }
 
@@ -48,28 +48,58 @@ public class Document {
     }
 
     // Getters and setters
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    public String getId() {
+        return id;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public void setId(String id) {
+        this.id = id;
+    }
 
-    public String getContent() { return content; }
-    public void setContent(String content) { 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
         this.content = content;
         this.wordCount = countWords(content);
     }
 
-    public String getFilePath() { return filePath; }
-    public void setFilePath(String filePath) { this.filePath = filePath; }
+    public String getFilePath() {
+        return filePath;
+    }
 
-    public LocalDateTime getUploadedDate() { return uploadedDate; }
-    public void setUploadedDate(LocalDateTime uploadedDate) { this.uploadedDate = uploadedDate; }
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 
-    public long getWordCount() { return wordCount; }
+    public LocalDateTime getUploadedDate() {
+        return uploadedDate;
+    }
 
-    public List<String> getTokens() { return tokens; }
-    public void setTokens(List<String> tokens) { this.tokens = tokens; }
+    public void setUploadedDate(LocalDateTime uploadedDate) {
+        this.uploadedDate = uploadedDate;
+    }
+
+    public long getWordCount() {
+        return wordCount;
+    }
+
+    public List<String> getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(List<String> tokens) {
+        this.tokens = tokens;
+    }
 
     @Override
     public String toString() {

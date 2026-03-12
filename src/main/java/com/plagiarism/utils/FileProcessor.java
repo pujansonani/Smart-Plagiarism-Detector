@@ -1,7 +1,6 @@
 package com.plagiarism.utils;
 
 import com.plagiarism.models.Document;
-import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -17,15 +16,14 @@ public class FileProcessor {
 
     // Supported file extensions
     private static final Set<String> SUPPORTED_EXTENSIONS = new HashSet<>(Arrays.asList(
-            "txt", "pdf", "doc", "docx"
-    ));
+            "txt", "pdf", "doc", "docx"));
 
     /**
      * Loads a document from file
      */
     public static Document loadDocument(String filePath) throws IOException {
         Path path = Paths.get(filePath);
-        
+
         if (!Files.exists(path)) {
             throw new IOException("File not found: " + filePath);
         }
@@ -45,10 +43,10 @@ public class FileProcessor {
      */
     public static void saveDocument(Document document, String outputPath) throws IOException {
         Path path = Paths.get(outputPath);
-        
+
         // Create directories if they don't exist
         Files.createDirectories(path.getParent());
-        
+
         Files.writeString(path, document.getContent(), StandardCharsets.UTF_8);
     }
 
