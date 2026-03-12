@@ -279,11 +279,13 @@ Typical Performance:
 
 ## 📄 License
 
-MIT License - See LICENSE file for details
+VIT Pune License 
+SY IT-F Students
 
 ## 👤 Author
 
-**B.Tech Final Year Student**
+**B.Tech Second Year Students
+Pujan Sonani, Tanisha Patil, Omkar Sonawane, Kasturi Sisodiya, Vedant Sonar**
 - Smart Plagiarism Detection System v1.0.0
 - Academic Project 2024
 
@@ -328,3 +330,4 @@ For issues or questions:
 **Version**: 1.0.0  
 **Last Updated**: 2024  
 **Status**: Production Ready ✅
+
